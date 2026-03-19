@@ -26,46 +26,32 @@
       background: linear-gradient(135deg, #0ea5e9 0%, #06b6d4 100%);
       transition: all 0.3s ease;
     }
-    .btn-primary:hover {
-      filter: brightness(1.1);
-      transform: scale(1.02);
-    }
+    .btn-primary:disabled { opacity: 0.5; cursor: not-allowed; }
+    
     @keyframes fadeIn {
       from { opacity: 0; transform: translateY(10px); }
       to { opacity: 1; transform: translateY(0); }
     }
     .animate-in { animation: fadeIn 0.5s ease-out forwards; }
     
-    /* Estilo para el botón de WhatsApp */
     .whatsapp-float {
-      position: fixed;
-      bottom: 24px;
-      right: 24px;
-      background-color: #25d366;
-      color: white;
-      border-radius: 50px;
-      padding: 12px 20px;
-      display: flex;
-      align-items: center;
-      gap: 10px;
+      position: fixed; bottom: 24px; right: 24px;
+      background-color: #25d366; color: white;
+      border-radius: 50px; padding: 12px 20px;
+      display: flex; align-items: center; gap: 10px;
       box-shadow: 0 10px 25px rgba(37, 211, 102, 0.3);
-      z-index: 100;
-      transition: all 0.3s ease;
-      text-decoration: none;
+      z-index: 100; transition: all 0.3s ease; text-decoration: none;
     }
-    .whatsapp-float:hover {
-      transform: scale(1.1);
-      filter: brightness(1.1);
-    }
+    .whatsapp-float:hover { transform: scale(1.1); filter: brightness(1.1); }
   </style>
 </head>
 
 <body class="h-full text-gray-100 gradient-bg">
   <div id="app" class="min-h-full overflow-x-hidden">
     
-    <a href="https://wa.me/50241614087?text=Hola%20LUMET,%20necesito%20información%20sobre%20sus%20servicios" target="_blank" class="whatsapp-float">
+    <a href="https://wa.me/50241614087?text=Hola%20LUMET,%20necesito%20información" target="_blank" class="whatsapp-float">
       <i data-lucide="message-circle" class="w-6 h-6"></i>
-      <span class="font-bold text-sm">Chatea con nosotros</span>
+      <span class="font-bold text-sm">WhatsApp</span>
     </a>
 
     <div id="toast-container" class="fixed top-4 right-4 z-50"></div>
@@ -73,25 +59,25 @@
     <nav class="sticky top-0 z-40 w-full bg-slate-900/80 backdrop-blur-md border-b border-white/5">
       <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
         <div class="flex items-center gap-2">
-          <div class="w-10 h-10 bg-cyan-500 rounded-lg flex items-center justify-center font-bold text-white shadow-lg shadow-cyan-500/20">L</div>
+          <div class="w-10 h-10 bg-cyan-500 rounded-lg flex items-center justify-center font-bold text-white shadow-lg">L</div>
           <span class="font-heading font-bold text-2xl tracking-tighter">LUMET</span>
         </div>
-        <div class="hidden md:flex gap-8 text-sm font-medium">
+        <div class="hidden md:flex gap-8 items-center text-sm font-medium">
           <a href="#servicios" class="hover:text-cyan-400 transition-colors">Servicios</a>
-          <a href="#contacto" class="hover:text-cyan-400 transition-colors">Solicitar Soporte</a>
-          <a href="#solicitudes" class="hover:text-cyan-400 transition-colors">Historial</a>
+          <a href="#contacto" class="hover:text-cyan-400 transition-colors">Contacto</a>
+          <a href="https://www.facebook.com/share/1AavdrBrcb/" target="_blank" class="text-gray-400 hover:text-[#1877F2] transition-colors">
+            <i data-lucide="facebook" class="w-5 h-5"></i>
+          </a>
         </div>
       </div>
     </nav>
 
     <header class="relative pt-20 pb-16 px-6 text-center">
-      <div class="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-2xl h-64 bg-cyan-500/10 blur-[120px] rounded-full"></div>
-      <h1 class="font-heading text-5xl md:text-7xl font-bold mb-4 bg-gradient-to-b from-white to-gray-400 bg-clip-text text-transparent">LUMET</h1>
-      <p class="text-cyan-400 font-medium tracking-widest uppercase text-sm mb-6">Tu solución tecnológica de confianza</p>
+      <h1 class="font-heading text-5xl md:text-7xl font-bold mb-4 bg-gradient-to-b from-white to-gray-400 bg-clip-text text-transparent uppercase tracking-tighter">LUMET</h1>
+      <p class="text-cyan-400 font-medium tracking-widest uppercase text-xs md:text-sm mb-6">Tu solución tecnológica de confianza</p>
       <div class="flex flex-wrap justify-center gap-4 text-xs md:text-sm text-gray-400">
         <span class="flex items-center gap-2 bg-white/5 px-4 py-2 rounded-full border border-white/10"><i data-lucide="phone" class="w-4 h-4 text-cyan-500"></i> (502) 4161 4087</span>
         <span class="flex items-center gap-2 bg-white/5 px-4 py-2 rounded-full border border-white/10"><i data-lucide="mail" class="w-4 h-4 text-cyan-500"></i> lumet.industrial@gmail.com</span>
-        <span class="flex items-center gap-2 bg-white/5 px-4 py-2 rounded-full border border-white/10"><i data-lucide="clock" class="w-4 h-4 text-cyan-500"></i> Lun - Vie: 8:00 - 17:00</span>
       </div>
     </header>
 
@@ -105,125 +91,122 @@
         <div class="service-card card-gradient p-8 rounded-3xl transition-all duration-300">
           <i data-lucide="laptop" class="w-10 h-10 text-cyan-400 mb-4"></i>
           <h3 class="text-xl font-bold mb-2">Reparación de PC</h3>
-          <p class="text-gray-400 text-sm leading-relaxed">Diagnóstico avanzado y reparación de hardware y software para todo tipo de equipos.</p>
+          <p class="text-gray-400 text-sm">Hardware y software para todo tipo de equipos.</p>
         </div>
         <div class="service-card card-gradient p-8 rounded-3xl transition-all duration-300">
           <i data-lucide="camera" class="w-10 h-10 text-cyan-400 mb-4"></i>
-          <h3 class="text-xl font-bold mb-2">CCTV y Vigilancia</h3>
-          <p class="text-gray-400 text-sm leading-relaxed">Instalación y mantenimiento de sistemas de cámaras para seguridad residencial e industrial.</p>
+          <h3 class="text-xl font-bold mb-2">CCTV</h3>
+          <p class="text-gray-400 text-sm">Sistemas de vigilancia residencial e industrial.</p>
         </div>
         <div class="service-card card-gradient p-8 rounded-3xl transition-all duration-300">
           <i data-lucide="zap" class="w-10 h-10 text-cyan-400 mb-4"></i>
           <h3 class="text-xl font-bold mb-2">Instalaciones Eléctricas</h3>
-          <p class="text-gray-400 text-sm leading-relaxed">Proyectos eléctricos profesionales en hogares, comercios e industrias.</p>
-        </div>
-        <div class="service-card card-gradient p-8 rounded-3xl transition-all duration-300">
-          <i data-lucide="wifi" class="w-10 h-10 text-cyan-400 mb-4"></i>
-          <h3 class="text-xl font-bold mb-2">Red Estructurada</h3>
-          <p class="text-gray-400 text-sm leading-relaxed">Instalación y configuración de redes de datos y telecomunicaciones de alta velocidad.</p>
-        </div>
-        <div class="service-card card-gradient p-8 rounded-3xl transition-all duration-300">
-          <i data-lucide="shield" class="w-10 h-10 text-cyan-400 mb-4"></i>
-          <h3 class="text-xl font-bold mb-2">Seguridad Informática</h3>
-          <p class="text-gray-400 text-sm leading-relaxed">Protección contra amenazas y configuración de firewalls para tu tranquilidad.</p>
-        </div>
-        <div class="service-card card-gradient p-8 rounded-3xl transition-all duration-300">
-          <i data-lucide="headphones" class="w-10 h-10 text-cyan-400 mb-4"></i>
-          <h3 class="text-xl font-bold mb-2">Soporte Especializado</h3>
-          <p class="text-gray-400 text-sm leading-relaxed">Asistencia técnica presencial y remota adaptada a tus necesidades específicas.</p>
+          <p class="text-gray-400 text-sm">Proyectos profesionales y mantenimiento.</p>
         </div>
       </div>
     </section>
 
+    <section class="max-w-4xl mx-auto px-6 py-10">
+      <div class="card-gradient rounded-3xl p-8 border border-[#1877F2]/30 shadow-2xl shadow-[#1877F2]/10 text-center">
+        <i data-lucide="facebook" class="w-16 h-16 text-[#1877F2] mx-auto mb-6"></i>
+        <h2 class="font-heading text-3xl font-bold mb-4">¡Síguenos en Facebook!</h2>
+        <p class="text-gray-300 mb-8 max-w-xl mx-auto">Mantente al tanto de nuestros proyectos recientes, consejos tecnológicos y ofertas especiales directamente en nuestra página oficial.</p>
+        <a href="https://www.facebook.com/share/1AavdrBrcb/" target="_blank" class="inline-flex items-center gap-3 bg-[#1877F2] text-white px-8 py-4 rounded-xl font-bold hover:brightness-110 transition-all shadow-lg shadow-[#1877F2]/20">
+          <i data-lucide="external-link" class="w-5 h-5"></i>
+          Visitar Página Oficial
+        </a>
+      </div>
+    </section>
+
     <section id="contacto" class="max-w-4xl mx-auto px-6 py-20">
-      <div class="card-gradient rounded-[2rem] p-8 md:p-12 border border-cyan-500/20 shadow-2xl">
+      <div class="card-gradient rounded-[2rem] p-8 md:p-12 border border-cyan-500/20 shadow-2xl shadow-cyan-500/5">
         <div class="text-center mb-10">
-          <h2 class="font-heading text-3xl font-bold mb-2">Solicitar Soporte</h2>
-          <p class="text-gray-400">Cuéntanos tu problema y te contactaremos a la brevedad.</p>
+          <h2 class="font-heading text-3xl font-bold mb-2 tracking-tight">Solicitar Soporte</h2>
+          <p class="text-gray-400 max-w-md mx-auto">Cuéntanos tu problema y un experto te contactará por correo lo antes posible.</p>
         </div>
         
-        <form id="support-form" class="space-y-5">
+        <form id="support-form" action="https://formspree.io/f/xpqykvyq" method="POST" class="space-y-5">
           <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-            <input type="text" id="nombre" required placeholder="Tu nombre completo" class="w-full bg-slate-800/50 border border-white/10 rounded-xl px-5 py-3 outline-none focus:border-cyan-500 transition-all">
-            <input type="email" id="email" required placeholder="tu@email.com" class="w-full bg-slate-800/50 border border-white/10 rounded-xl px-5 py-3 outline-none focus:border-cyan-500 transition-all">
+            <input type="text" name="nombre" required placeholder="Nombre completo" class="w-full bg-slate-800/50 border border-white/10 rounded-xl px-5 py-3 outline-none focus:border-cyan-500 transition-all">
+            <input type="email" name="email" required placeholder="Tu correo electrónico" class="w-full bg-slate-800/50 border border-white/10 rounded-xl px-5 py-3 outline-none focus:border-cyan-500 transition-all">
           </div>
           <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-            <input type="tel" id="telefono" placeholder="Teléfono de contacto" class="w-full bg-slate-800/50 border border-white/10 rounded-xl px-5 py-3 outline-none focus:border-cyan-500 transition-all">
-            <select id="tipo_servicio" required class="w-full bg-slate-800/50 border border-white/10 rounded-xl px-5 py-3 outline-none focus:border-cyan-500 transition-all text-gray-400">
-              <option value="">Selecciona el servicio...</option>
-              <option value="Reparación">Reparación de PC</option>
+            <input type="tel" name="telefono" placeholder="Teléfono" class="w-full bg-slate-800/50 border border-white/10 rounded-xl px-5 py-3 outline-none focus:border-cyan-500 transition-all">
+            <select name="servicio" required class="w-full bg-slate-800/50 border border-white/10 rounded-xl px-5 py-3 outline-none focus:border-cyan-500 transition-all text-gray-400">
+              <option value="">Tipo de servicio...</option>
+              <option value="Reparación PC">Reparación de PC</option>
               <option value="CCTV">CCTV y Vigilancia</option>
               <option value="Electricidad">Instalación Eléctrica</option>
               <option value="Redes">Red Estructurada</option>
-              <option value="Seguridad">Seguridad Informática</option>
-              <option value="Soporte">Soporte Técnico</option>
+              <option value="Otro">Otro</option>
             </select>
           </div>
-          <textarea id="descripcion" required rows="4" placeholder="Describe brevemente el problema..." class="w-full bg-slate-800/50 border border-white/10 rounded-xl px-5 py-3 outline-none focus:border-cyan-500 transition-all resize-none"></textarea>
-          <button type="submit" class="btn-primary w-full py-4 rounded-xl font-bold flex items-center justify-center gap-2 shadow-lg shadow-cyan-500/20">
-            <i data-lucide="send" class="w-5 h-5"></i> Enviar Solicitud
+          <textarea name="descripcion" required rows="4" placeholder="¿En qué podemos ayudarte? Describe tu problema brevemente..." class="w-full bg-slate-800/50 border border-white/10 rounded-xl px-5 py-3 outline-none focus:border-cyan-500 transition-all resize-none"></textarea>
+          
+          <button type="submit" id="submit-btn" class="btn-primary w-full py-4 rounded-xl font-bold flex items-center justify-center gap-2 shadow-lg shadow-cyan-500/20">
+            <i data-lucide="send" class="w-5 h-5"></i> <span id="btn-text">Enviar Solicitud</span>
           </button>
         </form>
       </div>
     </section>
 
-    <section id="solicitudes" class="max-w-4xl mx-auto px-6 py-20">
-      <h2 class="font-heading text-2xl font-bold mb-8 flex items-center gap-3">
-        <i data-lucide="clock" class="text-cyan-500"></i> Solicitudes Recientes
-      </h2>
-      <div id="solicitudes-container" class="space-y-4">
-        <p id="empty-state" class="text-gray-500 bg-white/5 py-12 text-center rounded-3xl border border-dashed border-white/10">No hay solicitudes registradas todavía.</p>
+    <footer class="py-12 text-center border-t border-white/5 mt-10">
+      <div class="flex justify-center gap-6 mb-6">
+        <a href="https://www.facebook.com/share/1AavdrBrcb/" target="_blank" class="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center text-gray-400 hover:bg-[#1877F2] hover:text-white transition-all">
+          <i data-lucide="facebook" class="w-5 h-5"></i>
+        </a>
+        <a href="mailto:lumet.industrial@gmail.com" class="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center text-gray-400 hover:bg-cyan-500 hover:text-white transition-all">
+          <i data-lucide="mail" class="w-5 h-5"></i>
+        </a>
       </div>
-    </section>
-
-    <footer class="py-12 text-center text-gray-500 text-sm border-t border-white/5">
-      <p>© 2026 LUMET Industrial. Todos los derechos reservados.</p>
+      <p class="text-gray-500 text-sm">© 2026 LUMET Industrial. Guatemala.</p>
     </footer>
   </div>
 
   <script>
-    // Inicializar Iconos de Lucide
     lucide.createIcons();
 
     const form = document.getElementById('support-form');
-    const container = document.getElementById('solicitudes-container');
-    const emptyState = document.getElementById('empty-state');
+    const btn = document.getElementById('submit-btn');
+    const btnText = document.getElementById('btn-text');
 
-    // Manejo del Formulario
-    form.addEventListener('submit', (e) => {
+    form.addEventListener('submit', async (e) => {
       e.preventDefault();
       
-      const nombre = document.getElementById('nombre').value;
-      const servicio = document.getElementById('tipo_servicio').value;
-      const fecha = new Date().toLocaleDateString();
+      // Estado de carga
+      btn.disabled = true;
+      btnText.innerText = "Enviando...";
 
-      // Crear tarjeta de solicitud
-      const card = document.createElement('div');
-      card.className = 'animate-in card-gradient p-6 rounded-2xl flex justify-between items-center border border-white/5 shadow-lg';
-      card.innerHTML = `
-        <div class="text-left">
-          <p class="font-bold text-white text-lg">${nombre}</p>
-          <p class="text-sm text-cyan-400 font-semibold">${servicio}</p>
-        </div>
-        <div class="text-right">
-          <p class="text-xs text-gray-500 mb-1">${fecha}</p>
-          <span class="text-[10px] bg-cyan-500/20 text-cyan-400 px-3 py-1 rounded-full uppercase font-black tracking-widest">Enviado</span>
-        </div>
-      `;
-
-      // Actualizar vista
-      if (emptyState) emptyState.classList.add('hidden');
-      container.prepend(card);
-
-      // Feedback visual (Toast)
-      const toast = document.createElement('div');
-      toast.className = 'bg-cyan-600 text-white px-8 py-4 rounded-2xl shadow-2xl font-bold animate-in mb-3 border border-white/20';
-      toast.innerHTML = '✅ ¡Solicitud enviada correctamente!';
-      document.getElementById('toast-container').appendChild(toast);
+      const data = new FormData(form);
       
-      setTimeout(() => toast.remove(), 4000);
-      form.reset();
+      try {
+        const response = await fetch(form.action, {
+          method: 'POST',
+          body: data,
+          headers: { 'Accept': 'application/json' }
+        });
+
+        if (response.ok) {
+          showToast("✅ ¡Enviado! Revisa tu correo pronto.");
+          form.reset();
+        } else {
+          showToast("❌ Error al enviar. Intenta de nuevo.", "error");
+        }
+      } catch (error) {
+        showToast("❌ Error de conexión.", "error");
+      } finally {
+        btn.disabled = false;
+        btnText.innerText = "Enviar Solicitud";
+      }
     });
+
+    function showToast(msj, type = "success") {
+      const toast = document.createElement('div');
+      toast.className = `px-6 py-4 rounded-2xl shadow-2xl font-bold animate-in mb-3 border border-white/20 ${type === 'success' ? 'bg-cyan-600' : 'bg-red-600'}`;
+      toast.innerText = msj;
+      document.getElementById('toast-container').appendChild(toast);
+      setTimeout(() => toast.remove(), 5000);
+    }
   </script>
 </body>
 </html>
